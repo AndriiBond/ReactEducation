@@ -1,10 +1,15 @@
-// Import Swiper React components
+import React, { useState, useRef} from 'react';
+import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import NavigationSlider from './NavigationSlider';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
+SwiperCore.use([Navigation]);
+
 function Slider(props) {
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
   const imgStyle = {
     verticalAlign: 'middle'
   };
@@ -14,19 +19,24 @@ function Slider(props) {
     lineHeight: '450px'
   };
 
+  const swiperSlides = props.images.map((src, i) => {
+    return <SwiperSlide style={slideStyle}>
+        <img src={src} style={imgStyle}/>
+    </SwiperSlide>;
+  });
+
   return (
     <Swiper
-      spaceBetween={0}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      effect="fade"
+      spaceBetween={10}
+      slidesPerView={2}
+      navigation
+      onBeforeInit={(swiper) => {
+        swiper.params.navigation.prevEl = navigationPrevRef.current;
+        swiper.params.navigation.nextEl = navigationNextRef.current;
+      }}
     >
-        {props.images.map((src, i) => {
-            return <SwiperSlide style={slideStyle}>
-                <img src={src} alt={i} style={imgStyle}/>
-            </SwiperSlide>;
-        })}
+        {swiperSlides}
+        <NavigationSlider navigationPrevRef={navigationPrevRef} navigationNextRef={navigationNextRef}/>
     </Swiper>
   );
 };
