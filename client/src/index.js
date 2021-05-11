@@ -24,11 +24,9 @@ const imageData = [
   ]
 ];
 
-const initialState = {
-  index: 0,
-};
 
-const store = createStore(reducer, initialState);
+
+const store = createStore(reducer);
 
 const mapStateToProps = (state) => {
   return {
