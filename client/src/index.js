@@ -9,22 +9,20 @@ import { reducer } from './reducers/reducer'
 
 const imageData = [
   [
-    'https://bipbap.ru/wp-content/uploads/2017/12/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
-    'https://bipbap.ru/wp-content/uploads/2017/12/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
-    'https://bipbap.ru/wp-content/uploads/2017/12/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
-    'https://bipbap.ru/wp-content/uploads/2017/12/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
-    'https://bipbap.ru/wp-content/uploads/2017/12/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
+    'http://localhost:9000/images/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
+    'http://localhost:9000/images/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
+    'http://localhost:9000/images/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
+    'http://localhost:9000/images/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png',
+    'http://localhost:9000/images/iPhone-Merry-Christmas-Cat-Wallpaper-640x361.png'
   ],
   [
-    'https://bipbap.ru/wp-content/uploads/2017/12/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
-    'https://bipbap.ru/wp-content/uploads/2017/12/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
-    'https://bipbap.ru/wp-content/uploads/2017/12/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
-    'https://bipbap.ru/wp-content/uploads/2017/12/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
-    'https://bipbap.ru/wp-content/uploads/2017/12/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg'
+    'http://localhost:9000/images/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
+    'http://localhost:9000/images/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
+    'http://localhost:9000/images/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
+    'http://localhost:9000/images/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg',
+    'http://localhost:9000/images/65620375-6b2b57fa5c7189ba4e3841d592bd5fc1-800-640x426.jpg'
   ]
 ];
-
-
 
 const store = createStore(reducer);
 
@@ -40,7 +38,7 @@ const WrappedAppComponent = connect(mapStateToProps)(App)
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <WrappedAppComponent />
+        <WrappedAppComponent />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

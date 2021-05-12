@@ -1,0 +1,15 @@
+{
+    "en": {
+        "cat.name": "Cat",
+        "navigation.next": "Next",
+        "navigation.prev": "Prev",
+        "change.cat": "Change cats"
+    },
+    "ru": {
+        "cat.name": "Кот",
+        "navigation.next": "Назад",
+        "navigation.prev": "Вперед",
+        "change.cat": "Поменять котиков"
+    }
+
+}

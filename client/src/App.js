@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import Slider from'./components/Slider'
 import { changeImages } from './actions/slider'
+import LanguageSelector from './components/LanguageSelector'
+import { LocaleProvider } from './context/LocaleContext'
+import Tranclation from './components/Translation'
 import './App.css';
 
 class App extends Component {
@@ -20,13 +23,18 @@ class App extends Component {
     const dispatch = this.props.dispatch;
 
     return (
-      <div className="App">
-        <Slider images={this.props.images}/>
-        <button onClick={()=> {
-          const newIndex = this.switchImagesIndex(this.props.index);
-          dispatch(changeImages(newIndex));
-        }}>Change cats</button>
-      </div>
+      <LocaleProvider>
+        <div className="App">
+          <Slider images={this.props.images}/>
+          <LanguageSelector/>
+            <button className={'change-cat-button'} onClick={()=> {
+              const newIndex = this.switchImagesIndex(this.props.index);
+              dispatch(changeImages(newIndex));
+            }}>
+                <Tranclation resource="change.cat" />
+            </button>
+        </div>
+      </LocaleProvider>
     );
   }
 }
